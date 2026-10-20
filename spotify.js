@@ -63,3 +63,14 @@ if (typeof document !== "undefined") {
     titulo.textContent = `Reproduciendo: ${cancionActual} - ${artistaActual}`;
     document.body.appendChild(titulo);
 }
+
+// 8. MÓDULOS 
+export const obtenerEstadoReproductor = () => {
+    return {
+        usuario: usuarioActivo,
+        cancion: cancionActual,
+        artista: artistaActual
+    };
+};
+
+console.log("Módulo exportado correctamente:", obtenerEstadoReproductor());

@@ -2,10 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Spotify JS</title>
+    <title>Spotify - Tarea Desafío</title>
 </head>
 <body>
     <h1>Perfil Spotify</h1>
-    <script src="spotify.js"></script>
+    
+    <script type="module">
+        
+        import { obtenerEstadoReproductor } from './spotify.js';
+
+        const estado = obtenerEstadoReproductor();
+        console.log("Datos importados desde el módulo:", estado);
+
+    </script>
 </body>
 </html>
