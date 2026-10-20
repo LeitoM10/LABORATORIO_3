@@ -39,3 +39,27 @@ console.log(JSON.stringify(artistasUpper, null, 2));
 // 4. FUNCIONES
 const obtenerEtiqueta = (artista, canción) => `Escuchando: ${canción} de ${artista}`;
 console.log(obtenerEtiqueta(artistaActual, cancionActual));
+
+// 5. ASINCRONISMO (Promise & Async/Await)
+const cargarCancion = () => new Promise(resolve => setTimeout(() => resolve("Pista cargada"), 1000));
+
+async function reproducir() {
+    const estado = await cargarCancion();
+    console.log(estado);
+}
+reproducir();
+
+
+// 6. API LOCAL STORAGE
+if (typeof localStorage !== "undefined") {
+    localStorage.setItem("ultimaCancion", cancionActual);
+    console.log("Guardado en LocalStorage:", localStorage.getItem("ultimaCancion"));
+}
+
+
+// 7. MANIPULACIÓN DEL DOM
+if (typeof document !== "undefined") {
+    const titulo = document.createElement("h2");
+    titulo.textContent = `Reproduciendo: ${cancionActual} - ${artistaActual}`;
+    document.body.appendChild(titulo);
+}
